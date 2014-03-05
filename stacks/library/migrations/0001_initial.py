@@ -11,7 +11,7 @@ class Migration(SchemaMigration):
         # Adding model 'Book'
         db.create_table(u'library_book', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('title', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('title', self.gf('django.db.models.fields.CharField')(max_length=128)),
             ('isbn', self.gf('django.db.models.fields.CharField')(max_length=10)),
         ))
         db.send_create_signal(u'library', ['Book'])
@@ -27,7 +27,7 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Book'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'isbn': ('django.db.models.fields.CharField', [], {'max_length': '10'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '100'})
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '128'})
         }
     }
 
